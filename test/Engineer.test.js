@@ -12,7 +12,7 @@ describe("Engineer", () => {
 
   describe("getRole", () => {
     it("getRole() should return \"Engineer\"", () => {
-      const testValue = "Engineer";
+      const { testValue } = "Engineer";
       const emp = new Engineer("Foo", 1, "test@test.com", "GitHubUser");
       expect(emp.getRole()).toBe(testValue);
     });
@@ -20,7 +20,7 @@ describe("Engineer", () => {
 
   describe("getGithub", () => {
     it("Can get GitHub username via getGithub()", () => {
-      const testValue = "GitHubUser";
+      const { testValue } = "GitHubUser";
       const emp = new Engineer("Foo", 1, "test@test.com", testValue);
       expect(emp.getGithub()).toBe(testValue);
     });

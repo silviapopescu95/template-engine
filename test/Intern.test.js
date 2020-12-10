@@ -1,4 +1,5 @@
 const Intern = require("../lib/Intern");
+const Employee = require("../lib/Employee");
 
 describe("Intern", () => {
   describe("School", () => {
@@ -11,7 +12,7 @@ describe("Intern", () => {
 
   describe("getRole", () => {
     it("getRole() should return \"Intern\"", () => {
-      const testValue = "Intern";
+      const { testValue } = "Intern";
       const emp = new Intern("Foo", 1, "test@test.com", "UCLA");
       expect(emp.getRole()).toBe(testValue);
     });
@@ -19,7 +20,7 @@ describe("Intern", () => {
 
   describe("getSchool", () => {
     it("Can get school via getSchool()", () => {
-      const testValue = "UCLA";
+      const { testValue } = "UCLA";
       const emp = new Intern("Foo", 1, "test@test.com", testValue);
       expect(emp.getSchool()).toBe(testValue);
     });

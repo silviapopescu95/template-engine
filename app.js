@@ -14,7 +14,6 @@ const render = require("./lib/htmlRender");
 
 // Arrays to push team memember info to
 const members = [];
-// const ids = [];
 
 // function to create a manager, to then create the team
 function start() {
@@ -47,7 +46,6 @@ function start() {
                 console.log(answers);
                 const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.office);
                 members.push(manager);
-                // ids.push(answers.managerId);
                 teamMembers();
             });
     }
@@ -103,7 +101,6 @@ function start() {
                 console.log(answers);
                 const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
                 members.push(engineer);
-                // ids.push(answers.engineerId);
                 teamMembers();
             });
     }
@@ -135,7 +132,6 @@ function start() {
                 console.log(answers);
                 const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school);
                 members.push(intern);
-                // ids.push(answers.internId);
                 teamMembers();
             });
     }
@@ -148,7 +144,6 @@ function start() {
 
     manager();
 }
-
 
 start();
 

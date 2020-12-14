@@ -14,7 +14,7 @@ const render = require("./lib/htmlRender");
 
 // Arrays to push team memember info to
 const members = [];
-const ids = [];
+// const ids = [];
 
 // function to create a manager, to then create the team
 function start() {
@@ -44,10 +44,10 @@ function start() {
                     name: "office"
                 }
             ]).then(function(answers) {
-                var data = (answers.managerName, answers.managerId, answers.managerEmail, answers.office);
-                const manager = new Manager(data);
+                console.log(answers);
+                const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.office);
                 members.push(manager);
-                ids.push(answers.managerId);
+                // ids.push(answers.managerId);
                 teamMembers();
             });
     }
@@ -92,7 +92,7 @@ function start() {
                 {
                     type: "input",
                     message: "Enter Engineer email: ",
-                    name: "EngineerEmail"
+                    name: "engineerEmail"
                 },
                 {
                     type: "input",
@@ -100,10 +100,10 @@ function start() {
                     name: "github"
                 }
             ]).then(function(answers) {
-                var data = (answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
-                const engineer = new Engineer(data);
+                console.log(answers);
+                const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
                 members.push(engineer);
-                ids.push(answers.engineerId);
+                // ids.push(answers.engineerId);
                 teamMembers();
             });
     }
@@ -129,13 +129,13 @@ function start() {
                 {
                     type: "input",
                     message: "Enter name of Intern school: ",
-                    name: "schoool"
+                    name: "school"
                 }
             ]).then(function(answers) {
-                var data = (answers.internName, answers.internId, answers.internEmail, answers.school);
-                const intern = new Intern(data);
+                console.log(answers);
+                const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school);
                 members.push(intern);
-                ids.push(answers.internId);
+                // ids.push(answers.internId);
                 teamMembers();
             });
     }
@@ -147,18 +147,6 @@ function start() {
     }
 
     manager();
-
-
-
-
-    // After the user has input all employees desired, call the `render` function (required
-    // above) and pass in an array containing all employee objects; the `render` function will
-    // generate and return a block of HTML including templated divs for each employee!
-
-    // After you have your html, you're now ready to create an HTML file using the HTML
-    // returned from the `render` function. Now write it to a file named `team.html` in the
-    // `output` folder. You can use the variable `outputPath` above target this location.
-
 }
 
 

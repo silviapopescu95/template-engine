@@ -12,7 +12,7 @@ describe("Manager", () => {
 
   describe("getRole", () => {
     it('getRole() should return "Manager"', () => {
-      const { testValue } = "Manager";
+      const testValue = "Manager";
       const emp = new Manager("Foo", 1, "test@test.com", 100);
       expect(emp.getRole()).toBe(testValue);
     });

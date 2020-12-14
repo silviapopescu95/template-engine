@@ -5,13 +5,12 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+// Links to output directory, and names the output file "team.html"
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer");
-
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+// Links to script to render the html
+const render = require("./lib/htmlRender");
 
 // Arrays to push team memember info to
 const members = [];
@@ -72,7 +71,7 @@ function start() {
                 } else if (answers.teamMember === "Intern") {
                     intern();
                 } else {
-                    teamMembers();
+                    createTemplates();
                 }
             });
     }
@@ -141,9 +140,13 @@ function start() {
             });
     }
 
+    function createTemplates() {
+        
+        fs.writeFileSync(outputPath, render(members), "utf-8");
+        console.log("Successfully created Employee summaries!")
+    }
 
-
-
+    manager();
 
 
 
@@ -159,7 +162,7 @@ function start() {
 }
 
 
-
+start();
 
 
 
